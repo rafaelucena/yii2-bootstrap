@@ -146,7 +146,7 @@ class Nav extends Widget
     {
         $items = [];
         foreach ($this->items as $i => $item) {
-            if (isset($item['visible']) && !$item['visible']) {
+            if ((isset($item['visible']) && !$item['visible']) || empty($item)) {
                 continue;
             }
             $items[] = $this->renderItem($item);
